@@ -31,3 +31,5 @@ document.querySelector('#push').onclick = function() {
         document.querySelector('#newtask input').value = ""
     }
 }
+var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene);

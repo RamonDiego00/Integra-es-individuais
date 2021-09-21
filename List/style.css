@@ -12,9 +12,10 @@ body{
         #8E0E00,
         #1F1C18
     );
+    overflow-x: hidden;
 }
 
-.container {
+.containe {
     width: 40%;
     min-width: 450px;
     position: absolute;
@@ -101,4 +102,8 @@ body{
 .feito{
     text-decoration: line-through;
     cursor: pointer;
+}
+img{
+    width: 80px;
+    height: 80px;
 }
