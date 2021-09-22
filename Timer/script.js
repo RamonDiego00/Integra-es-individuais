@@ -40,6 +40,8 @@ function displayTimer() {
     timerRef.innerHTML = `${h} : ${m} : ${s}: ${ms}`
 }
 
+//Os Quadrados
+
 const ulSquares = document.querySelector(".squares")
 
 for (let i = 0; i < 11; i++) {
