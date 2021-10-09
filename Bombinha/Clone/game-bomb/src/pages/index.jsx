@@ -1,14 +1,17 @@
+import PaginaInicial from "../components/PaginaInicial";
 import Quadrante from "../components/Quadrante";
 
 export default function Inicio() {
   return(
     <div>
+
+      <PaginaInicial />
+        {/* <Quadrante/>
         <Quadrante/>
         <Quadrante/>
         <Quadrante/>
         <Quadrante/>
-        <Quadrante/>
-        <Quadrante/>
+        <Quadrante/> */}
     </div>
   )
 }
