@@ -1,26 +1,7 @@
-//Atributos
-
-// MapType
-// maxZoom*
-// titleSize*
-// name
-// minZoom
-// alt
-
-//Métodos
-
-// getTile(coord, zoom, docu)
-// releaseTile(tile)
-// minZoom
-
-// MeuMapa
-
-class MeuMapa{
+class OverlayMap{
     constructor(tileSize) {
         this.tileSize = tileSize;
-        this.maxZoom = 18;
-        this.name = 'meumapa';
-        this.alt = 'O mapa não carregou'
+       
     }
 
     getTile(coord, zoom, ownerDocument) {
@@ -29,9 +10,9 @@ class MeuMapa{
         div.style.width = this.tileSize.width+'px'
         div.style.height = this.tileSize.height+'px'
         div.style.fontSize = '10px'
-        div.style.backgroundColor = '#add'
-        div.style.boderWidth = '1px'
-        div.style.boderColor = '#333'
+        div.style.borderStyle = 'solid'
+        div.style.borderWidth = '1px'
+        div.style.borderColor = '#333'
         return div;
     }
 }
@@ -46,13 +27,7 @@ button.addEventListener('click',function() {
             var mapOptions = {
                     center: {lat: -34.397, lng: 150.644},
                     zoom: 8,
-                    mapTypeId:'meumapa', //roadmap, satellite, hybrid, terrain
-                    mapTypeControlOptions: {
-                        mapTypeIds: ['roadmap', 'meumapa','satellite', 'terrain']
-                    }
             }
             map = new google.maps.Map(document.getElementById('map'),mapOptions);
-
-            map.mapTypes.set('meumapa', new MeuMapa(new google.maps.Size(256, 256)));
-           
+            map.overlayMapTypes.insertAt(0, new OverlayMap(new google.maps.Size(256, 256)))
         }
