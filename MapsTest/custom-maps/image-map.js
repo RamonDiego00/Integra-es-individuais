@@ -3,7 +3,12 @@ var map;
             var mapOptions = {
                     center: {lat: -34.397, lng: 150.644},
                     zoom: 8,
+                    // disableDefaultUI: true,
+                    // zoomControl:false,
+                    // streetViewControl:false,
                     mapTypeControlOptions: {
+                        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                        position: google.maps.MapTypeControlStyle.TOP_CENTER,
                         mapTypeIds: ['osm']
                     }
             }
