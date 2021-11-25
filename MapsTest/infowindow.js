@@ -1,5 +1,4 @@
 var map;
-var geocoder;
 function initMap() {
     var mapOptions = {
             center:{lat:-3.716816, lng: -38.519115},
