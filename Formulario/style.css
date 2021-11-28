@@ -2,7 +2,7 @@
 *{
   margin: 0;
   padding: 0;
-  outline: none;
+  /* outline: none; */
   font-family: 'Poppins', sans-serif;
 }
 body{
@@ -18,7 +18,7 @@ body{
   background: #00cc00;
 }
 .container{
-  width: 330px;
+  width: 500px;
   background: #fff;
   text-align: center;
   border-radius: 5px;
@@ -49,7 +49,7 @@ body{
 .form-outer form .page .field{
   width: 330px;
   height: 45px;
-  margin: 45px 0;
+  margin: 30px 0;
   display: flex;
   position: relative;
 }
@@ -58,7 +58,7 @@ form .page .field .label{
   top: -30px;
   font-weight: 500;
 }
-form .page .field input{
+form .page .field textarea{
   height: 100%;
   width: 100%;
   border: 1px solid lightgrey;
