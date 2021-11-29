@@ -28,8 +28,21 @@ function initMap() {
 
     setTimeout(() => {
         poly.getPath().push(new google.maps.LatLng(LONDRES.lat, LONDRES.lng))
+        circle.setEditable(false)
     }, 2000)
     //Circle
+    const circle = new google.maps.Circle({
+        strokeColor:'#FF0000',
+        strokeWeight:2,
+        strokeOpacity:1,
+        fillColor:'FF0000',
+        fillOpacity:'.1',
+        center: LONDRES,
+        radius: 10000,
+        map:map,
+        // editable: true,
+        // draggable: true,
+    })
 
     //Rectangle
 
