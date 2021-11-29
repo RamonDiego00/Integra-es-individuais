@@ -35,7 +35,7 @@ function initMap() {
         strokeColor:'#FF0000',
         strokeWeight:2,
         strokeOpacity:1,
-        fillColor:'FF0000',
+        fillColor:'#FF0000',
         fillOpacity:'.1',
         center: LONDRES,
         radius: 10000,
@@ -45,6 +45,15 @@ function initMap() {
     })
 
     //Rectangle
-
+    const rectangle = new google.maps.Rectangle({
+        strokeColor:'#FF0000',
+        strokeWeight:2,
+        strokeOpacity:1,
+        fillColor:'#FF0000',
+        fillOpacity:'.1',
+        bounds: RECTANGLE_BOUNDS,
+        editable: true,
+        map:map,
+    })
 
 }
