@@ -1,5 +1,8 @@
 var geocoder;
 var map;
+var aplicar;
+
+map = new google.maps.Map(document.getElementById('map'),mapOptions) 
 function initMap() {
     var latlng = new google.maps.LatLng(-26.7694400,-48.6458300);
     var mapOptions = {
@@ -343,16 +346,6 @@ function initMap() {
         map:map,
     })
 
-    // const penhaCoords = [
-    //     { lat:  -26.7694400, lng: -48.6458300 },
-    //   ];
-
-
-
-    // const penha = new google.maps.Polygon({ paths: penhaCoords });
-
-    //teste
-
     function filtroEletricista() {
 
 
@@ -435,7 +428,6 @@ function initMap() {
 
     const penhaCoords = [
         { lat: -23.5489, lng:  -48.6458300  },
-        // { lat: -26.7694400, lng:  -46.6388 },
       ];
     
       const bermudaTriangle = new google.maps.Polygon({ paths: penhaCoords });
@@ -452,12 +444,6 @@ function initMap() {
       
       });
     }
-
-    //teste
-
-    document.querySelector('#filtro').addEventListener('click', function() {
-        console.log(`esse marcador está dentro do circulo?: ${google.maps.geometry.poly.containsLocation(marker.getPosition(), geometryForms.Polygon)}`)
-    })
     
         map.addListener('zoom_changed', function() {
             const circle = new google.maps.Circle({
@@ -489,136 +475,3 @@ if(navigator.geolocation) {
 $(document).ready(function () {
     initMap();
 });
-
-
-
-// [
-//     {
-//       "featureType": "administrative.country",
-//       "elementType": "geometry.fill",
-//       "stylers": [
-//         {
-//           "color": "#00265c"
-//         },
-//         {
-//           "weight": 1
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "administrative.country",
-//       "elementType": "geometry.stroke",
-//       "stylers": [
-//         {
-//           "color": "#00265c"
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "administrative.locality",
-//       "elementType": "geometry",
-//       "stylers": [
-//         {
-//           "color": "#f25a00"
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "administrative.locality",
-//       "elementType": "geometry.fill",
-//       "stylers": [
-//         {
-//           "color": "#f25a00"
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "administrative.locality",
-//       "elementType": "geometry.stroke",
-//       "stylers": [
-//         {
-//           "color": "#f25a00"
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "administrative.province",
-//       "elementType": "geometry.fill",
-//       "stylers": [
-//         {
-//           "color": "#00265c"
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "administrative.province",
-//       "elementType": "geometry.stroke",
-//       "stylers": [
-//         {
-//           "color": "#00265c"
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "landscape",
-//       "elementType": "geometry",
-//       "stylers": [
-//         {
-//           "color": "#fbf9ee"
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "landscape",
-//       "elementType": "geometry.fill",
-//       "stylers": [
-//         {
-//           "weight": 1
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "road.highway",
-//       "elementType": "geometry.fill",
-//       "stylers": [
-//         {
-//           "color": "#fec88b"
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "road.highway",
-//       "elementType": "geometry.stroke",
-//       "stylers": [
-//         {
-//           "color": "#ffb057"
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "road.local",
-//       "elementType": "geometry.stroke",
-//       "stylers": [
-//         {
-//           "color": "#bbece2"
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "transit.station.airport",
-//       "elementType": "geometry.fill",
-//       "stylers": [
-//         {
-//           "color": "#fbe6da"
-//         }
-//       ]
-//     },
-//     {
-//       "featureType": "transit.station.bus",
-//       "stylers": [
-//         {
-//           "color": "#f25a00"
-//         }
-//       ]
-//     }
-//   ]
