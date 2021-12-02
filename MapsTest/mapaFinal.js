@@ -210,6 +210,119 @@ function initMap() {
         radius: 10000,
         map:map,
     })
+
+    // const penhaCoords = [
+    //     { lat:  -26.7694400, lng: -48.6458300 },
+    //   ];
+
+
+
+    // const penha = new google.maps.Polygon({ paths: penhaCoords });
+
+    //teste
+
+    function filtroEletricista() {
+        if(marker1.title != 'Eletricista') {
+            marker1.setMap(null)
+            console.log(marker1)
+            
+        }
+         if(marker2.title != 'Eletricista') {
+            marker2.setMap(null)
+            console.log(marker2)   
+        }
+         if(marker3.title != 'Eletricista') {
+            marker3.setMap(null)
+            console.log(marker3)   
+        }
+         if(marker4.title != 'Eletricista') {
+            marker4.setMap(null)
+            console.log(marker4)   
+        }
+         if(marker5.title != 'Eletricista') {
+            marker5.setMap(null)
+            console.log(marker5)   
+        }
+         if(marker6.title != 'Eletricista') {
+            marker6.setMap(null)
+            console.log(marker6)   
+        }
+         if(marker7.title != 'Eletricista') {
+            marker7.setMap(null)
+            console.log(marker7)   
+        }
+         if(marker8.title != 'Eletricista') {
+            marker8.setMap(null)
+            console.log(marker8)   
+        }
+         if(marker9.title != 'Eletricista') {
+            marker9.setMap(null)
+            console.log(marker9)   
+        }
+         if(marker10.title != 'Eletricista') {
+            marker10.setMap(null)
+            console.log(marker10)   
+        } if(marker11.title != 'Eletricista') {
+            marker11.setMap(null)
+            console.log(marker11)   
+        } if(marker12.title != 'Eletricista') {
+            marker12.setMap(null)
+            console.log(marker12)   
+        } if(marker13.title != 'Eletricista') {
+            marker13.setMap(null)
+            console.log(marker13)   
+        } if(marker14.title != 'Eletricista') {
+            marker14.setMap(null)
+            console.log(marker14)   
+        } if(marker15.title != 'Eletricista') {
+            marker15.setMap(null)
+            console.log(marker15)   
+        } if(marker16.title != 'Eletricista') {
+            marker16.setMap(null)
+            console.log(marker16)   
+        } if(marker17.title != 'Eletricista') {
+            marker17.setMap(null)
+            console.log(marker17)   
+        } if(marker18.title != 'Eletricista') {
+            marker18.setMap(null)
+            console.log(marker18)   
+        } if(marker19.title != 'Eletricista') {
+            marker19.setMap(null)
+            console.log(marker19)   
+        } if(marker20.title != 'Eletricista') {
+            marker20.setMap(null)
+            console.log(marker20)   
+        } if(marker6.title != 'Eletricista') {
+            marker6.setMap(null)
+            console.log(marker6)   
+        } 
+    }
+
+    const penhaCoords = [
+        { lat: -23.5489, lng:  -48.6458300  },
+        // { lat: -26.7694400, lng:  -46.6388 },
+      ];
+    
+      const bermudaTriangle = new google.maps.Polygon({ paths: penhaCoords });
+    
+      google.maps.event.addListener(map, "click", (e) => {
+        const filtros = google.maps.geometry.poly.containsLocation(
+            e.latLng,
+            bermudaTriangle,
+            filtroEletricista(),
+          console.log("Ramon"),
+          console.log(marker),
+        )
+    
+      
+      });
+    }
+
+    //teste
+
+    document.querySelector('#filtro').addEventListener('click', function() {
+        console.log(`esse marcador está dentro do circulo?: ${google.maps.geometry.poly.containsLocation(marker.getPosition(), geometryForms.Polygon)}`)
+    })
     
         map.addListener('zoom_changed', function() {
             const circle = new google.maps.Circle({
@@ -225,7 +338,6 @@ function initMap() {
 
         })
     
-}
 
 if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){ // callback de sucesso
