@@ -23,10 +23,7 @@ async function initialize() {
   const { clientSecret } = await response.json();
 
   const appearance = {
-    theme: 'night',
-    variables: {
-      colorPrimary: '#87a0d9',
-    },
+    theme: 'stripe',
   };
   elements = stripe.elements({ appearance, clientSecret });
 

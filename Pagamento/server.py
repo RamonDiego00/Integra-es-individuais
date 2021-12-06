@@ -2,6 +2,7 @@
 """
 Python 3.6 or newer required.
 """
+from flask import Flask
 import json
 import os
 import stripe
@@ -40,5 +41,6 @@ def create_payment():
         })
     except Exception as e:
         return jsonify(error=str(e)), 403
-if __name__ == '__main__':
-    app.run(port=4242)
+if __name__ == "__main__":
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)
